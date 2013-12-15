@@ -110,5 +110,6 @@ module Sf where
 %include Preface.lagda
 %include Basics.lagda
 %include InductionProofs.lagda
+%include Lists.lagda
 
 \end{document}

@@ -351,6 +351,17 @@ sym refl = refl
 
 trans : forall {l}{A : Set l}{x y z : A} -> x == y -> y == z -> x == z
 trans refl refl = refl
+
+_QED : forall {l}{A : Set l}(x : A) -> x == x
+x QED = refl
+
+infixr 2 _==<_>_
+
+_==<_>_ : forall {l}{A : Set l} (x : A) {y z} -> x == y -> y == z -> x == z
+_==<_>_ x xy yz = trans xy yz
+
+begin : forall {l}{A : Set l}{x y : A} -> x == y -> x == y
+begin x = x
 \end{code}
 %endif
 

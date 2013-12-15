@@ -173,7 +173,9 @@ plusSnmnSm (suc n) m = cong suc (plusSnmnSm n m)
 
 plusComm : forall (n m : Nat) -> n + m == m + n
 plusComm zero m = sym (plus0R m)
-plusComm (suc n) m = {!!}
+plusComm (suc n) m = trans (plusSnmnSm n m) 
+                           (trans (plusComm n (suc m)) 
+                                  (plusSnmnSm m n)) 
 \end{code}
 %endif
 
@@ -202,7 +204,7 @@ multComm = (HOLE GAP 0)
 \begin{exe}[even |n| implies odd |suc n|]
 Prove the following simple fact:
 \begin{spec}
-evenNoddSucN : forall (n : Nat) -> evenb n = not (oddb (suc n))
+evenNoddSucN : forall (n : Nat) -> evenb n == not (oddb (suc n))
 evenNoddSucN = (HOLE GAP 0)
 \end{spec}
 \end{exe}
@@ -215,35 +217,47 @@ it can be proved using only simplification and rewriting, (b) it also requires c
 or (c) it also requires induction. Write down your prediction. Then fill in the proof. 
 (There is no need to turn in your piece of paper; this is just to encourage you to reflect before hacking!)
 
-\begin{code}
+\begin{spec}
 bleNatRefl : forall (n : Nat) -> True == bleNat n n
-bleNatRefl = {!!}
+bleNatRefl =  (HOLE GAP 0)
 
 zeroNbeqSuc : forall (n : Nat) -> beqNat 0 (suc n) == False
-zeroNbeqSuc = {!!}
+zeroNbeqSuc =  (HOLE GAP 1)
 
 andFalseR : forall (b : Bool) -> and b False == False
-andFalseR = {!!}
+andFalseR =  (HOLE GAP 2)
 
 plusBleCompatL : forall (n m p : Nat) -> bleNat n m == True -> 
                  bleNat (p + n) (p + m) == True
-plusBleCompatL = {!!}
+plusBleCompatL =  (HOLE GAP 3)
 
 sucNBeq0 : forall (n : Nat) -> beqNat (suc n) zero == False
-sucNBeq0 = {!!}
+sucNBeq0 =  (HOLE GAP 4)
 
 mult1L : forall (n : Nat) -> 1 * n == n
-mult1L = {!!}
+mult1L =  (HOLE GAP 5)
 
 all3Spec : forall (b c : Bool) -> or (and b c) (or (not b) (not c)) == True
-all3Spec = {!!}
+all3Spec =  (HOLE GAP 6)
 
 multPlusDistrR : forall (n m p : Nat) -> (n + m) * p == (n * p) + (m * p)
-multPlusDistrR = {!!}
+multPlusDistrR =  (HOLE GAP 7)
 
 multAssoc : forall (n m p : Nat) -> n * (m * p) == (n * m) * p
-multAssoc = {!!}
-\end{code}
+multAssoc =  (HOLE GAP 8)
+
+beqNatRefl : forall (n : Nat) -> True == beqNat n n
+beqNatRefl = (HOLE GAP 9)
+\end{spec}
 \end{exe}
 
+\section{Equational Reasoning}\label{equational-reasoning}
 
+Agda's supports for mixfix operators offers an excellent oportunity for creating
+operators that can resamble pencil-and-paper style of reasoning. In this section
+we will see how to use support for equational reasoning to construct a proof for
+commutativity of addition for natural numbers.
+
+NOTE: I belive that here would be nice to talk a bit about the usage of equational
+reasoning proofs. Latter, in another chapter, talk about propositional equality and
+some functions over it.
