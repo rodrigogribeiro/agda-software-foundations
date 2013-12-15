@@ -4,9 +4,9 @@ module Basics where
 \end{code}
 %endif
 
-\chapter{Basic Functional Programming in Agda}
+\chapter{Basic Functional Programming in Agda}\label{basics}
 
-\section{Introduction}
+\section{Introduction}\label{basics-introduction}
 
 The functional programming style brings programming closer to mathematics: 
 If a procedure or method has no side effects, then pretty much all you need 
@@ -26,7 +26,7 @@ Other common features of functional languages include \textit{algebraic data typ
 structures, and sophisticated \textit{polymorphic type systems} that support abstraction 
 and code reuse. Agda shares all of these features.
 
-\section{Enumerated Types}
+\section{Enumerated Types}\label{enumerated-types}
 
 One unusual aspect of Coq is that its set of built-in features is extremely small. For 
 example, instead of providing the usual palette of atomic data types (booleans, integers, strings, etc.), 
@@ -37,7 +37,7 @@ Agda has a standard library that comes with definitions of booleans, numbers, an
 like lists. But there is nothing magic or primitive about these library definitions: they are ordinary user code.
 To see how this works, let's start with a very simple example.
 
-\subsection{Days of Week}
+\subsection{Days of Week}\label{days-of-week}
 
 The following declaration tells Agda that we are defining a new set of data values --- a type.
 
@@ -79,7 +79,7 @@ another uses the interactive emacs mode. To test the new defined |nextDay| funct
 just type C-c C-n and type |nextDay| |Friday| on the emacs buffer in order to Agda evaluate
 the expression to |Saturday|.
 
-\subsection{Booleans}
+\subsection{Booleans}\label{booleans}
 
 In a similar way, we can define the type |Bool| of booleans, with members true and false.
 
@@ -143,7 +143,7 @@ and3 a b c = ?
 \end{spec}
 \end{exe}
 
-\subsection{Function Types}
+\subsection{Function Types}\label{function-types}
 
 We can use the emacs interactive mode to deduce an expression types. Just type
 C-c C-d and enter a expression in the emacs buffer to Agda give this expression type.
@@ -151,7 +151,7 @@ C-c C-d and enter a expression in the emacs buffer to Agda give this expression 
 As an example, entering the expression |and| |True|, Agda will return the type
 |Bool -> Bool|. Entering |not|, will also return |Bool -> Bool|.
 
-\subsection{Numbers}
+\subsection{Numbers}\label{numbers}
 
 The types we have defined so far are examples of ``enumerated types'': their definitions 
 explicitly enumerate a finite set of elements. A more interesting way of defining a type 
@@ -276,8 +276,8 @@ suc n * m = m + (n * m)
 
 _-_ : Nat -> Nat -> Nat
 zero  - _     = zero
-n     - zero  = n
-suc n - suc m = suc (n - m)
+(suc n) - zero  = suc n
+suc n - suc m = n - m
 \end{code}
 
 \begin{exe}[factorial function]
@@ -341,7 +341,16 @@ data _==_ {l}{A : Set l}(x : A) : A -> Set l where
 {-# BUILTIN EQUALITY _==_ #-}
 {-# BUILTIN REFL refl #-}
 
-infixl 4 _==_ 
+infix 1 _==_ 
+
+cong : forall {l l'}{A : Set l}{B : Set l'}(f : A -> B) {x y} -> x == y -> f x == f y
+cong f refl = refl
+
+sym : forall {l}{A : Set l}{x y : A} -> x == y -> y == x
+sym refl = refl
+
+trans : forall {l}{A : Set l}{x y z : A} -> x == y -> y == z -> x == z
+trans refl refl = refl
 \end{code}
 %endif
 
@@ -381,7 +390,7 @@ lemmaMult0L : forall (n : Nat) -> 0 * n == 0
 lemmaMult0L n = refl
 \end{code}
 
-\section{Proof by Rewriting}
+\section{Proof by Rewriting}\label{rewriting}
 
 Here is a slightly more interesting theorem:
 
@@ -485,7 +494,7 @@ mult0Plus n m = refl
 Agda is able to determine that |(0 + n) * m| is definitionally equal to |n * m|, so we can just prove
 |mult0Plus| using |refl|.
 
-\section{Proof by Case Analysis}
+\section{Proof by Case Analysis}\label{case-analysis}
 
 Of course, not everything can be proved by simple calculation: In general, unknown, hypothetical 
 values (arbitrary numbers, booleans, lists, etc.) can block the calculation. For example, if we try 
@@ -532,7 +541,7 @@ zeroNBeq+1 n = (HOLE GAP 0)
 \end{exe}
 
 
-\section{More Exercices}
+\section{More Exercices}\label{more-exercices}
 
 Use what you have learned so far to prove the following theorems.
 \begin{exe}

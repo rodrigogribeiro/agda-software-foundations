@@ -4,7 +4,7 @@ module Preface where
 \end{code}
 %endif
 
-\chapter{Preface}
+\chapter*{Preface}
 
 \section{Welcome}
 
