@@ -8,5 +8,6 @@ clean:
 	rm *.pdf
 	rm *.aux
 	rm *.log
+	rm *.ptb
 view: sf
 	evince Sf.pdf &
