@@ -6,11 +6,11 @@ module Preface where
 
 \chapter*{Preface}
 
-\section{Welcome}
+\section*{Welcome}
 
 This electronic book is a Agda version of Pierce's Coq book named Software Foundations.
 
-\section{Overview}
+\section*{Overview}
 
 ...
 

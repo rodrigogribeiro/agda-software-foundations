@@ -106,6 +106,7 @@
 \begin{document}
   \title{Software Foundations}
   \maketitle
+  \tableofcontents
 
 %if False
 \begin{code}
@@ -117,5 +118,5 @@ module Sf where
 %include Basics.lagda
 %include InductionProofs.lagda
 %include Lists.lagda
-
+%include Poly.lagda
 \end{document}
