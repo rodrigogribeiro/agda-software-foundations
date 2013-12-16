@@ -2,6 +2,8 @@
 \usepackage{a4}
 \usepackage{palatino}
 \usepackage{natbib}
+\usepackage{amsmath,amsthm}
+\usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{stmaryrd}
 \usepackage{upgreek}
@@ -57,6 +59,7 @@
 \newcommand{\T}[1]{\raisebox{0.02in}{\tiny\green{\textsc{#1}}}}
 
 \newcommand{\us}[1]{\_\!#1\!\_}
+\newtheorem{theorem}{Theorem}
 \newtheorem{exe}{Exercise}[chapter]
 
 %include lhs2TeX.fmt
@@ -79,6 +82,9 @@
 %format ->> = "\C{\rhd}"
 %format _->>_ = "\_\!" ->> "\!\_"
 %format Cx = "\D{Cx}"
+%format QED = "\D{\Box}"
+%format ++ = "\F{++}"
+%format <> = "\D{nil}"
 %format Em = "\C{\mathcal{E}}"
 %format <: = "\D{\in}"
 %format _<:_ = "\us{" <: "}"

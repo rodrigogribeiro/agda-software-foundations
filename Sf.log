@@ -1,0 +1,600 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.11.5)  16 DEC 2013 19:06
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Sf.tex
+(./Sf.tex
+LaTeX2e <2011/06/27>
+Babel <3.9f> and hyphenation patterns for 78 languages loaded.
+(/usr/share/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-dist/tex/latex/ntgclass/a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+)
+(/usr/share/texmf-dist/tex/latex/psnfss/palatino.sty
+Package: palatino 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/share/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip43
+\bibsep=\skip44
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count88
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count89
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count90
+\leftroot@=\count91
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
+\dotsspace@=\muskip10
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks15
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/share/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip48
+\thm@postskip=\skip49
+\thm@headsep=\skip50
+\dth@everypar=\toks24
+)
+(/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
+Package: stmaryrd 1994/03/03 St Mary's Road symbol package
+\symstmry=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
+(Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
+)
+(/usr/share/texmf-dist/tex/latex/was/upgreek.sty
+Package: upgreek 2003/02/12 v2.0 (WaS)
+Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
+\symugrf@m=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
+)
+(/usr/share/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+(/usr/share/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+
+(/usr/share/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count101
+))
+\c@theorem=\count102
+\c@exe=\count103
+
+(/usr/share/texmf-dist/tex/latex/polytable/polytable.sty
+Package: polytable 2013/07/18 v0.8.5 `polytable' package (Andres Loeh)
+
+(/usr/share/texmf-dist/tex/latex/lazylist/lazylist.sty)
+(/usr/share/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen112
+\extrarowheight=\dimen113
+\NC@list=\toks25
+\extratabsurround=\skip51
+\backup@length=\skip52
+)
+\PT@colwidth=\dimen114
+\PT@cols=\count104
+\PT@table=\count105
+\PT@toks=\toks26
+\PT@in=\read1
+\PT@out=\write3
+)
+\mathindent=\dimen115
+\blanklineskip=\skip53
+
+(/usr/share/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count106
+\calc@Bcount=\count107
+\calc@Adimen=\dimen116
+\calc@Bdimen=\dimen117
+\calc@Askip=\skip54
+\calc@Bskip=\skip55
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count108
+\calc@Cskip=\skip56
+) (./Sf.aux)
+\openout1 = `Sf.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 330.
+LaTeX Font Info:    ... okay on input line 330.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 330.
+LaTeX Font Info:    ... okay on input line 330.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 330.
+LaTeX Font Info:    ... okay on input line 330.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 330.
+LaTeX Font Info:    ... okay on input line 330.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 330.
+LaTeX Font Info:    ... okay on input line 330.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 330.
+LaTeX Font Info:    ... okay on input line 330.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 330.
+
+
+(/usr/share/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+(/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count109
+\scratchdimen=\dimen118
+\scratchbox=\box28
+\nofMPsegments=\count110
+\nofMParguments=\count111
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count112
+\MPscratchDim=\dimen119
+\MPnumerator=\count113
+\makeMPintoPDFobject=\count114
+\everyMPtoPDFconversion=\toks28
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 332.
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 332.
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+stmry on input line 332.
+
+
+(/usr/share/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+
+LaTeX Warning: No \author given.
+
+[1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+
+]
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 336.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 338.
+ [3] [4
+
+]
+Chapter 1.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <20.74> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 349.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 382.
+\openout3 = `Sf.ptb'.
+
+[5]
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+ [6]
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 529.
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 596.
+
+ (/usr/share/texmf-dist/tex/latex/psnfss/omsppl.fd
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 596.
+\openout3 = `Sf.ptb'.
+
+ [7]
+Overfull \hbox (0.1963pt too wide) in paragraph at lines 629--633
+\OT1/ppl/m/n/10 im-ply that the ex-pres-sion $[][]$, the ex-pres-sion $[][] [][
+]$, the ex-pres-sion $[][] \OT1/cmr/m/n/10 ([][] [][])$\OT1/ppl/m/n/10 ,
+ []
+
+\openout3 = `Sf.ptb'.
+
+
+Overfull \hbox (9.4057pt too wide) in paragraph at lines 656--659
+[]\OT1/ppl/m/n/10 For most func-tion def-i-ni-tions over num-bers, pure pat-ter
+n match-ing is not enough:
+ []
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+[8]
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+ [9]
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+ [10]
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+
+Overfull \hbox (3.65799pt too wide) in paragraph at lines 984--991
+ [][] 
+ []
+
+
+Overfull \hbox (3.65799pt too wide) in paragraph at lines 984--991
+ [][] 
+ []
+
+[11]
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+ [12]
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+ [13] [14
+
+]
+Chapter 2.
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+[15]
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+ [16]
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+
+Overfull \hbox (21.6722pt too wide) in paragraph at lines 1363--1377
+ [][] 
+ []
+
+
+Overfull \hbox (21.6722pt too wide) in paragraph at lines 1363--1377
+ [][] 
+ []
+
+
+Overfull \hbox (21.6722pt too wide) in paragraph at lines 1363--1377
+ [][][][] 
+ []
+
+
+Overfull \hbox (21.6722pt too wide) in paragraph at lines 1363--1377
+ [][][][] 
+ []
+
+\openout3 = `Sf.ptb'.
+
+[17]
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+ [18] [19] [20
+
+]
+Chapter 3.
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+
+Overfull \hbox (2.05072pt too wide) in paragraph at lines 1558--1561
+\OT1/ppl/m/n/10 Here, in or-der to be able to state the def-i-ni-tional equal-i
+ty be-tween $[][]$ and $\OT1/cmr/m/n/10 ([][] [][]\OML/cmm/m/it/10 ; [][] [][]\
+OT1/cmr/m/n/10 )$
+ []
+
+\openout3 = `Sf.ptb'.
+
+[21]
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+ [22]
+\openout3 = `Sf.ptb'.
+
+
+Overfull \hbox (2.77087pt too wide) in paragraph at lines 1706--1708
+\OT1/ppl/m/it/10 all even val-ues from a $[][]$. Im-ple-ment your func-tion in 
+such a way that $[][]$
+ []
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+[23]
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+ [24]
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+
+Overfull \hbox (0.74905pt too wide) in paragraph at lines 1933--1934
+[]\OT1/ppl/b/n/10 Theorem 1. []\OT1/ppl/m/it/10 For all $[][]$s $[][]$, $[][]$ 
+and $[][]$, we have $[][] [][] \OT1/cmr/m/n/10 ([][] [][] [][])  \OMS/cmsy/m/n/
+10 ^^Q  \OT1/cmr/m/n/10 ([][] [][] [][]) [][] [][]$\OT1/ppl/m/it/10 . 
+ []
+
+[25]
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+ [26]
+\openout3 = `Sf.ptb'.
+
+ [27]
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+
+Overfull \hbox (71.22505pt too wide) in paragraph at lines 2204--2223
+ [][] 
+ []
+
+
+Overfull \hbox (71.22505pt too wide) in paragraph at lines 2204--2223
+ [][] 
+ []
+
+
+Overfull \hbox (71.22505pt too wide) in paragraph at lines 2204--2223
+ [][] 
+ []
+
+
+Overfull \hbox (71.22505pt too wide) in paragraph at lines 2204--2223
+ [][] 
+ []
+
+
+Overfull \hbox (71.22505pt too wide) in paragraph at lines 2204--2223
+ [][] 
+ []
+
+
+Overfull \hbox (71.22505pt too wide) in paragraph at lines 2204--2223
+ [][] 
+ []
+
+
+Overfull \hbox (71.22505pt too wide) in paragraph at lines 2204--2223
+ [][] 
+ []
+
+
+Overfull \hbox (71.22505pt too wide) in paragraph at lines 2204--2223
+ [][] 
+ []
+
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+[28]
+\openout3 = `Sf.ptb'.
+
+\openout3 = `Sf.ptb'.
+
+ [29] (./Sf.aux) ) 
+Here is how much of TeX's memory you used:
+ 3312 strings out of 493311
+ 39902 string characters out of 6143650
+ 111285 words of memory out of 5000000
+ 6706 multiletter control sequences out of 15000+600000
+ 29168 words of font info for 88 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 27i,9n,47p,294b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/shar
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><
+/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/am
+sfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8
+a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/te
+xmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1
+/urw/palatino/uplri8a.pfb>
+Output written on Sf.pdf (29 pages, 224315 bytes).
+PDF statistics:
+ 151 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
