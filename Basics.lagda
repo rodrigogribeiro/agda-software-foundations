@@ -366,6 +366,10 @@ _==[_]_ x xy yz = trans xy yz
 
 begin : forall {l}{A : Set l}{x y : A} -> x == y -> x == y
 begin x = x
+
+if_then_else_ : forall {A : Set} -> Bool -> A -> A -> A
+if True  then t else f = t
+if False then t else f = f
 \end{code}
 %endif
 

@@ -119,4 +119,5 @@ module Sf where
 %include InductionProofs.lagda
 %include Lists.lagda
 %include Poly.lagda
+%include MoreAgda.lagda
 \end{document}
