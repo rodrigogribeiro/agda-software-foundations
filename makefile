@@ -1,8 +1,7 @@
 default: sf
 
-sf: Sf.lagda Preface.lagda Basics.lagda
+sf:
 	lhs2TeX --agda Sf.lagda > Sf.tex
-	pdflatex Sf.tex
 	pdflatex Sf.tex
 	pdflatex Sf.tex
 clean:

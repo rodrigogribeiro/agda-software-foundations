@@ -35,7 +35,7 @@ To avoid all this repetition, Agda supports polymorphic type definitions.
 For example, here is a polymorphic list datatype.
 
 \begin{code}
-data List  (A : Set) : Set where
+data List  {l}(A : Set l) : Set l where
   nil : List A
   _,_ : A -> List A -> List A
 \end{code}
@@ -294,6 +294,22 @@ uncurry : {A B C : Set} -> ((A * B) -> C) -> A -> B -> C
 uncurry f x y = f (x , y)
 \end{code}
 
+%if False
+More stuff used in latter chapters...
+\begin{code}
+id : {A : Set} -> A -> A
+id x = x
+
+snoc : {A : Set} -> A -> List A -> List A
+snoc x nil = x , nil
+snoc x (y , ys) = y , (snoc x ys)
+
+rev : {A : Set} -> List A -> List A
+rev nil = nil
+rev (x , xs) = snoc x (rev xs)
+\end{code}
+%endif
+
 \begin{exe}[Curry and Uncurry are inverses]
 Now prove the following facts that state, together, that |curry| and |uncurry| are
 inverses of each other:
@@ -331,9 +347,7 @@ testFilterEven = refl
 We can use |filter| to give a concise version of the |countoddmembers| function from the Lists chapter.
 \begin{code}
 countoddmembers' : List Nat -> Nat
-countoddmembers' l = length (filter oddb l) where 
-                     oddb : Nat -> Bool
-                     oddb n = not (evenb n)
+countoddmembers' l = length (filter oddb l)  
 
 testCountOddMembers' : countoddmembers' (1 , 2 , 3 , nil) == 2
 testCountOddMembers' = refl

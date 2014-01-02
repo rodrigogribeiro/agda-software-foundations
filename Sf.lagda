@@ -2,7 +2,7 @@
 \usepackage{a4}
 \usepackage{palatino}
 \usepackage{natbib}
-\usepackage{amsmath,amsthm}
+\usepackage{amsmath,amsthm,proof}
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{stmaryrd}
@@ -81,6 +81,7 @@
 %format iota = "\C{\upiota}"
 %format ->> = "\C{\rhd}"
 %format _->>_ = "\_\!" ->> "\!\_"
+%format _==_ = "\_\!" == "\!\_"
 %format Cx = "\D{Cx}"
 %format QED = "\D{\Box}"
 %format ++ = "\F{++}"
@@ -120,4 +121,5 @@ module Sf where
 %include Lists.lagda
 %include Poly.lagda
 %include MoreAgda.lagda
+%include Propositions.lagda
 \end{document}

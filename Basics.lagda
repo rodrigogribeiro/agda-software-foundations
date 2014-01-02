@@ -236,6 +236,14 @@ oddb n = ?
 \end{spec}
 \end{exe}
 
+%if False
+I'm putting this here, because its useful in other places...
+\begin{code}
+oddb : Nat -> Bool
+oddb n = not (evenb n)
+\end{code}
+%endif
+
 Naturally, we can also define multi-argument functions by recursion.
 
 %if False
