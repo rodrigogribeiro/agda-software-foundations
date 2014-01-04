@@ -81,6 +81,8 @@
 %format iota = "\C{\upiota}"
 %format ->> = "\C{\rhd}"
 %format _->>_ = "\_\!" ->> "\!\_"
+%format * = "\C{\times}"
+%format _*_ = "\_\!\," * "\,\!\_"
 %format _==_ = "\_\!" == "\!\_"
 %format Cx = "\D{Cx}"
 %format QED = "\D{\Box}"
@@ -122,4 +124,6 @@ module Sf where
 %include Poly.lagda
 %include MoreAgda.lagda
 %include Propositions.lagda
+%include MorePropositions.lagda
+%include Logic.lagda
 \end{document}
