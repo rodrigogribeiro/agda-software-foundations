@@ -267,4 +267,23 @@ beqLeFalse = (HOLE GAP 2)
 
 \section{Existential Quantification}
 
+Another critical logical connective is existential quantification. 
+We can express it with the following definition:
 
+\begin{code}
+data exists {A : Set} (P : A -> Set) : Set where
+  exIntro : forall (witness : A) -> P witness -> exists P
+\end{code}
+
+That is, |exists| is a family of types indexed by a type |A| and a property |P| over |A|. 
+In order to give evidence for the assertion ``there exists an |x| for which the property |P| holds''
+ we must actually name a witness --- a specific value |x| --- and then give evidence for |P x|, i.e., 
+evidence that |x| has the property |P|.
+
+Let's consider a simple example of an existencial proposition:
+\begin{code}
+sampleEx : exists (\ n -> evenb n == True)
+sampleEx = exIntro zero refl
+\end{code}
+Note that we have to explicitly give the witness, |zero| and the proof term that it satisfies the property
+|evenb zero == True|.
