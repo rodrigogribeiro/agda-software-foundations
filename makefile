@@ -12,5 +12,6 @@ clean:
 	rm *.ptb
 	rm *.agdai
 	rm *.toc
+	rm *.out
 view: sf
 	evince Sf.pdf &

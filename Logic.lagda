@@ -10,7 +10,7 @@ This chapter explains the encodings and explain with some details how equality w
 \begin{code}
 module Logic where
 
-open import Basics hiding (_*_;_+_)
+open import Basics hiding (_*_) renaming (_+_ to _:+_)
 open import Poly
 open import Propositions
 open import MorePropositions
@@ -287,3 +287,20 @@ sampleEx = exIntro zero refl
 \end{code}
 Note that we have to explicitly give the witness, |zero| and the proof term that it satisfies the property
 |evenb zero == True|.
+
+If we have an existential hypothesis in the context, we can eliminate it with pattern matching, as shown in the next example. 
+\begin{spec}
+sampleEx2 : forall n -> exists (\ m -> n == 4 + m) -> exists (\ o -> n == 2 + o)
+sampleEx2 n (exIntro w prf) = (HOLE GAP 0)
+\end{spec}
+To finish this proof, we need to pattern match on |prf|, producing:
+\begin{spec}
+sampleEx2 : forall n -> exists (\ m -> n == 4 :+ m) -> exists (\ o -> n == 2 :+ o)
+sampleEx2 .(suc (suc (suc (suc w)))) (exIntro w refl) = (HOLE GAP 0)
+\end{spec}
+that is trivially solved using C-c C-a for calling Agsy --- Agda's auto solver.
+\begin{code}
+sampleEx2 : forall n -> exists (\ m -> n == 4 :+ m) -> exists (\ o -> n == 2 :+ o)
+sampleEx2 .(suc (suc (suc (suc w)))) (exIntro w refl) = exIntro (suc (suc w)) refl
+\end{code}
+

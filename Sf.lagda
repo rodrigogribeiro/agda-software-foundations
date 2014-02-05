@@ -7,7 +7,9 @@
 \usepackage{amsfonts}
 \usepackage{stmaryrd}
 \usepackage{upgreek}
+\usepackage[pdftex]{hyperref}
 \usepackage{url}
+
 
 \DeclareMathAlphabet{\mathkw}{OT1}{cmss}{bx}{n}
 
@@ -80,8 +82,13 @@
 %format Ty = "\D{Ty}"
 %format iota = "\C{\upiota}"
 %format ->> = "\C{\rhd}"
+%format <-> = "\leftrightarrow"
+%format _<->_ = "\_\!" <-> "\!\_"
+%format _/=_ = "\_\!" /= "\!\_"
+%format . = "."
 %format _->>_ = "\_\!" ->> "\!\_"
 %format * = "\C{\times}"
+%format :+ = "\F{+}"
 %format _*_ = "\_\!\," * "\,\!\_"
 %format _==_ = "\_\!" == "\!\_"
 %format Cx = "\D{Cx}"
