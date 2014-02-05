@@ -133,4 +133,7 @@ module Sf where
 %include Propositions.lagda
 %include MorePropositions.lagda
 %include Logic.lagda
+
+\bibliographystyle{plain}
+\bibliography{Sf.bib}
 \end{document}

@@ -304,3 +304,97 @@ sampleEx2 : forall n -> exists (\ m -> n == 4 :+ m) -> exists (\ o -> n == 2 :+ 
 sampleEx2 .(suc (suc (suc (suc w)))) (exIntro w refl) = exIntro (suc (suc w)) refl
 \end{code}
 
+\begin{exe}
+Prove that existential quantification distributes over disjunction.
+\begin{spec}
+distrExistsOr : forall (A : Set)(P Q : A -> Set), exists (\ x -> P x + Q x) <-> (exists (\ x -> P x) + exists (\ x -> Q x))
+distrExistsOr = (HOLE GAP 0)
+\end{spec}
+\end{exe}
+
+\section{Equality}
+
+Even Agda's equality relation is not built in. It has (roughly) the following inductive definition.
+
+\begin{spec}
+data _==_ {l}{A : Set l}(x : A) : A -> Set l where
+  refl : x == x
+\end{spec}
+
+The definition of |_==_| is a bit subtle. The way to think about it is that, given a set |A|, it defines 
+a family of propositions ``|x| is equal to |y|,'' indexed by pairs of values (|x| and |y|) from |A|. 
+There is just one way of constructing evidence for members of this family: applying the constructor |refl| 
+to a type |A| and a value |x : A| yields evidence that |x| is equal to |x|.
+
+\begin{exe}[Leibniz Equality]
+The inductive definitions of equality corresponds to Leibniz equality: what we mean when we say ``x and y are equal'' 
+is that every property on |P| that is true of |x| is also true of |y|.
+\begin{spec}
+leibnizEquality : forall (A : Set) (x y : A) -> x == y -> forall (P : A -> Set) -> P x -> P y
+leibnizEquality = (HOLE GAP 0)
+\end{spec}
+\end{exe}
+
+We can use |refl| to construct evidence that, for example, |2 == 2|. Can we also use it to construct evidence that 
+|1 + 1 = 2|? Yes: indeed, it is the very same piece of evidence! The reason is that Agda treats as ``the same'' 
+any two terms that are convertible according to a simple set of computation rules. These rules include evaluation of 
+function application, inlining of definitions, and simplification of matches.
+
+\section{Evidence-carrying booleans}
+
+So far we've seen two different forms of equality predicates: |_==_|, which produces a |Set|, and the type-specific forms, 
+like |beqNat|, that produce boolean values. The former are more convenient to reason about, but we've relied on the latter 
+to let us use equality tests in computations. While it is straightforward to write lemmas (e.g. beqNatTrue and beqNatFalse) 
+that connect the two forms, using these lemmas quickly gets tedious.
+
+It turns out that we can get the benefits of both forms at once by using a sum type (logical ``or'').
+
+Think of sum type as being like the boolean type, but instead of its values being just |True| and |False|, 
+they carry evidence of truth or falsity. This means that when we pattern match on them, we are left with the 
+relevant evidence as a hypothesis.
+
+Here we define a better function for equality test on |Nat|:
+\begin{code}
+eqNatDec : forall (x y : Nat) -> (x == y) + (x /= y)
+eqNatDec zero zero = inl refl
+eqNatDec zero (suc y) = inr (\ ())
+eqNatDec (suc x) zero = inr (\ ())
+eqNatDec (suc x) (suc y) with eqNatDec x y 
+eqNatDec (suc .y) (suc y) | inl refl = inl refl
+eqNatDec (suc x) (suc y) | inr r = inr (λ ctr → r (inv x y ctr)) where
+                         inv : forall (x y : Nat) -> suc x == suc y -> x == y
+                         inv zero zero p = refl
+                         inv zero (suc y) () 
+                         inv (suc x) zero () 
+                         inv (suc .y) (suc y) refl = refl
+\end{code}
+
+Read as a theorem, this says that equality on |Nat| is decidable: that is, given two |Nat| values, we can always 
+produce either evidence that they are equal or evidence that they are not. Read computationally, |eqNatDec| takes 
+two |Nat| values and returns a sum constructed with |inl| if they are equal and |inr| if they are not; this result 
+can be tested with pattern matching.
+
+\section{Additional Exercices}
+
+\begin{exe}[Stutter]
+Formulating inductive definitions of predicates is an important skill you'll need in this course. Try to solve 
+this exercise without any help at all (except from your study group partner, if you have one).
+
+We say that a list of numbers ``stutters'' if it repeats the same number consecutively. The predicate (type) ``NoStutter l''
+ means that a list |l| does not stutter. Formulate an inductive definition for |NoStutter|. 
+(Note that the sequence 1,4,1 does not stutter, but 1,1,4 does.)
+
+After, check if your definition was right by doing the following tests:
+
+\begin{spec}
+test1 : NoStutter (3 , 1 ,4 , 1 , 5 , 6 , nil)
+test1 = (HOLE GAP 0)
+
+test2 : NoStutter nil
+test2 = (HOLE GAP 1)
+
+test3 : ~ NoSutter (3 , 1 , 1 , 0 , nil)
+test3 = (HOLE GAP 2)
+\end{spec}
+
+\end{exe}

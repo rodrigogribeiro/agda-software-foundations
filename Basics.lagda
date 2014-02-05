@@ -28,12 +28,14 @@ and code reuse. Agda shares all of these features.
 
 \section{Enumerated Types}\label{enumerated-types}
 
-One unusual aspect of Coq is that its set of built-in features is extremely small. For 
+One unusual aspect of Agda is that its set of built-in features is extremely small. For 
 example, instead of providing the usual palette of atomic data types (booleans, integers, strings, etc.), 
 Agda offers an extremely powerful mechanism for defining new data types from scratch --- so powerful that 
 all these familiar types arise as instances.
 
-Agda has a standard library that comes with definitions of booleans, numbers, and many common data structures 
+Agda has a standard library\footnote{The standard library isn't shipped as part of the Agda distribuition, but can be easily installed. 
+For details, consult the Agda wiki \cite{Wiki}.}
+that comes with definitions of booleans, numbers, and many common data structures 
 like lists. But there is nothing magic or primitive about these library definitions: they are ordinary user code.
 To see how this works, let's start with a very simple example.
 
