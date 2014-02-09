@@ -89,6 +89,7 @@
 %format _->>_ = "\_\!" ->> "\!\_"
 %format * = "\C{\times}"
 %format :+ = "\F{+}"
+%format :* = "\F{*}"
 %format _*_ = "\_\!\," * "\,\!\_"
 %format _==_ = "\_\!" == "\!\_"
 %format Cx = "\D{Cx}"
@@ -133,7 +134,10 @@ module Sf where
 %include Propositions.lagda
 %include MorePropositions.lagda
 %include Logic.lagda
+%include ProofObjects.lagda
+%include MoreInd.lagda
+%include SfLib.lagda
 
-\bibliographystyle{plain}
+\bibliographystyle{natbib}
 \bibliography{Sf.bib}
 \end{document}
