@@ -113,6 +113,14 @@ data Nat : Set where
   suc  : Nat -> Nat
 \end{code}
 
+%if False
+\begin{code}
+{-# BUILTIN NATURAL  Nat #-}
+{-# BUILTIN ZERO zero #-}
+{-# BUILTIN SUC  suc #-}
+\end{code}
+%endif
+
 \subsection{Functions Over Natural Numbers}
 
 \begin{code}
@@ -147,6 +155,9 @@ data Empty : Set where
 
 ~_ : forall {l}(A : Set l) -> Set l
 ~ A = A -> Empty
+
+_/=_ : forall {l}{A : Set l} -> A -> A -> Set l
+x /= y = ~ (x == y)
 
 data Unit : Set where
   unit : Unit
@@ -186,4 +197,105 @@ A * B = Sigma A (\_ -> B)
 \begin{code}
 exists : forall {a b}{A : Set a}(B : A -> Set b) -> Set (LMax a b)
 exists = Sigma _
+\end{code}
+
+\subsection{Predicates Over Natural Numbers}
+
+\subsubsection{Evenness}
+
+\begin{code}
+data Ev : Nat -> Set where
+  ev0 : Ev 0
+  evs : forall {n : Nat} -> Ev n -> Ev (suc (suc n))
+\end{code}
+
+\subsubsection{Ordering}
+
+\begin{code}
+data _<=_ : Nat -> Nat -> Set where
+  le0 : forall (n : Nat) -> 0 <= n
+  leS : forall (n m : Nat) -> n <= m -> n <= suc m
+
+data _<='_ : Nat -> Nat -> Set where
+  leN  : forall (n : Nat) -> n <=' n
+  leS' : forall (n m : Nat) -> n <=' m -> n <=' suc m
+
+_<_ : Nat -> Nat -> Set 
+n < m = n <= m * n /= m
+
+_<'_ : Nat -> Nat -> Set
+n <' m = n <=' m * n /= m
+\end{code}
+
+\begin{code}
+data _>=_ : Nat -> Nat -> Set where
+  ge0 : forall (n : Nat) -> n >= 0
+  geS : forall (n m : Nat) -> n >= m -> suc n >= m
+
+data _>='_ : Nat -> Nat -> Set where
+  geN  : forall (n : Nat) -> n >=' n
+  geS' : forall (n m : Nat) -> n >=' m -> suc n >=' m
+
+_>_ : Nat -> Nat -> Set 
+n > m = n >= m * n /= m
+
+_>'_ : Nat -> Nat -> Set
+n >' m = n >=' m * n /= m
+\end{code}
+
+\subsection{Some Useful Lemmas}
+
+\begin{code}
+andTrueElim : forall (b c : Bool) -> and b c == True -> (b == True) * (c == True)
+andTrueElim False False ()
+andTrueElim False True ()
+andTrueElim True False ()
+andTrueElim True True refl = refl , refl
+
+beqNatSym : forall (n m : Nat) -> beqNat n m == beqNat m n
+beqNatSym zero zero = refl
+beqNatSym zero (suc m) = refl
+beqNatSym (suc n) zero = refl
+beqNatSym (suc n) (suc m) = beqNatSym n m
+
+eqNatDec : forall (x y : Nat) -> (x == y) + (x /= y)
+eqNatDec zero zero = inl refl
+eqNatDec zero (suc y) = inr (\ ())
+eqNatDec (suc x) zero = inr (\ ())
+eqNatDec (suc x) (suc y) with eqNatDec x y 
+eqNatDec (suc .y) (suc y) | inl refl = inl refl
+eqNatDec (suc x) (suc y) | inr r = inr (λ ctr → r (inv x y ctr)) where
+                         inv : forall (x y : Nat) -> suc x == suc y -> x == y
+                         inv zero zero p = refl
+                         inv zero (suc y) () 
+                         inv (suc x) zero () 
+                         inv (suc .y) (suc y) refl = refl
+
+exFalsum : forall {l}{A : Set l} -> Empty -> A
+exFalsum ()
+
+evNotEvS : forall (n : Nat) -> Ev n -> ~ Ev (suc n)
+evNotEvS zero p ()
+evNotEvS (suc n) p (evs ctr) = evNotEvS n ctr p
+
+<=-refl : forall (n : Nat) -> n <= n
+<=-refl zero = le0 zero
+<=-refl (suc n) with <=-refl n 
+...| r = {!!}
+
+<=-<=' : forall {n m : Nat} -> n <= m -> n <=' m
+<=-<=' {.0} {zero} (le0 .0) = leN zero
+<=-<=' {.0} {suc m} (le0 .(suc m)) = leS' zero m (<=-<=' (le0 m))
+<=-<=' {n} (leS .n m p) = leS' n m (<=-<=' p) 
+
+<='-<= : forall {n m : Nat} -> n <=' m -> n <= m
+<='-<= {.m} {m} (leN .m) = {!!}
+<='-<= {n} (leS' .n m p) = {!!}
+
+bleNatTrue : forall (n m : Nat) -> bleNat n m == True -> n <= m
+bleNatTrue zero zero p = le0 zero
+bleNatTrue (suc n) zero ()
+bleNatTrue zero (suc m) p = le0 (suc m)
+bleNatTrue (suc n) (suc m) p with bleNatTrue n m p 
+...| p' = {!!} 
 \end{code}
