@@ -214,7 +214,7 @@ data Ev : Nat -> Set where
 \begin{code}
 data _<=_ : Nat -> Nat -> Set where
   le0 : forall (n : Nat) -> 0 <= n
-  leS : forall (n m : Nat) -> n <= m -> n <= suc m
+  leS : forall (n m : Nat) -> n <= m -> suc n <= suc m
 
 data _<='_ : Nat -> Nat -> Set where
   leN  : forall (n : Nat) -> n <=' n
@@ -241,6 +241,22 @@ n > m = n >= m * n /= m
 
 _>'_ : Nat -> Nat -> Set
 n >' m = n >=' m * n /= m
+\end{code}
+
+\subsection{Lists}
+
+\begin{code}
+data List {l}(A : Set l) : Set l where
+  [] : List A
+  _::_ : A -> List A -> List A
+
+length : forall {l}{A : Set l} -> List A -> Nat
+length [] = 0
+length (_ :: xs) = suc (length xs)
+
+_++_ : forall {l}{A : Set l} -> List A -> List A -> List A
+[] ++ ys = ys
+(x :: xs) ++ ys = x :: (xs ++ ys)
 \end{code}
 
 \subsection{Some Useful Lemmas}
@@ -278,24 +294,61 @@ evNotEvS : forall (n : Nat) -> Ev n -> ~ Ev (suc n)
 evNotEvS zero p ()
 evNotEvS (suc n) p (evs ctr) = evNotEvS n ctr p
 
-<=-refl : forall (n : Nat) -> n <= n
-<=-refl zero = le0 zero
-<=-refl (suc n) with <=-refl n 
-...| r = {!!}
-
-<=-<=' : forall {n m : Nat} -> n <= m -> n <=' m
-<=-<=' {.0} {zero} (le0 .0) = leN zero
-<=-<=' {.0} {suc m} (le0 .(suc m)) = leS' zero m (<=-<=' (le0 m))
-<=-<=' {n} (leS .n m p) = leS' n m (<=-<=' p) 
-
-<='-<= : forall {n m : Nat} -> n <=' m -> n <= m
-<='-<= {.m} {m} (leN .m) = {!!}
-<='-<= {n} (leS' .n m p) = {!!}
+<=-succ : forall (n : Nat) -> ~ (suc n <= n)
+<=-succ .(suc m) (leS .(suc m) m p) = <=-succ m p
 
 bleNatTrue : forall (n m : Nat) -> bleNat n m == True -> n <= m
 bleNatTrue zero zero p = le0 zero
 bleNatTrue (suc n) zero ()
 bleNatTrue zero (suc m) p = le0 (suc m)
-bleNatTrue (suc n) (suc m) p with bleNatTrue n m p 
-...| p' = {!!} 
+bleNatTrue (suc n) (suc m) p = leS n m (bleNatTrue n m p)
+
+bleNatFalse : forall (n m : Nat) -> bleNat n m == False -> ~ (n <= m)
+bleNatFalse zero m () _
+bleNatFalse (suc n) zero refl () 
+bleNatFalse (suc n) (suc m) p (leS .n .m r) = bleNatFalse n m p r
+
+data AppearsIn (n : Nat) : List Nat -> Set where
+  here  : forall l -> AppearsIn n (n :: l)
+  there : forall l n' -> AppearsIn n l -> AppearsIn n (n' :: l)
+
+data NextNat (n : Nat) : Nat -> Set where
+  nn : NextNat n (suc n)
+
+data TotalRelation : Nat -> Nat -> Set where
+  total : forall (n m : Nat) -> TotalRelation n m
+
+data EmptyRelation : Nat -> Nat -> Set where 
+\end{code}
+
+\subsection{From Later Chapters}
+
+\begin{code}
+Relation : forall {l} -> Set l -> Set (LMax (LSuc LZero) l)
+Relation A = A -> A -> Set
+
+Deterministic : forall {l}{A : Set l} (R : Relation A) -> Set l
+Deterministic {_} {A} R = forall (x y y' : A) -> R x y -> R x y' -> y == y'
+
+data Star {l}(A : Set l)(R : Relation A) : A -> A -> Set l where
+  starRefl : forall (x : A) -> Star A R x x
+  starStep : forall (x y z : A) -> R x y -> Star A R y z -> Star A R x z
+
+starR : forall {l}(A : Set l)(R : Relation A)(x y : A) -> R x y -> Star A R x y
+starR A R x y r = starStep x y y r (starRefl y)
+
+starTrans : forall {l}(A : Set l)(R : Relation A)(x y z : A) -> Star A R x y -> Star A R y z -> Star A R x z
+starTrans A R .y y z (starRefl .y) yz = yz
+starTrans A R x y z (starStep .x y' .y x' xy) yz = starStep x y' z x' (starTrans A R y' y z xy yz)
+\end{code}
+
+\section{Identifiers and Polymorphic Maps}
+
+\begin{code}
+
+data Id : Set where
+  id : Nat -> Id
+
+
+
 \end{code}
